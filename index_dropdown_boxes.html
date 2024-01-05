@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Box Dropdown</title>
+    <style>
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 10px;
+            margin: 20px;
+            align-items: start; /* Align items to the start of the grid area */
+        }
+
+        .dropdown-box {
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            overflow: hidden;
+            max-height: 50px; /* Adjusted to show only the first line */
+            transition: max-height 0.3s ease;
+            user-select: text; /* Allow text selection for editing */
+            position: relative; /* Add this line */
+        }
+
+        .link-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            z-index: 10; /* Ensure it's above other content */
+        }
+
+
+        .more-content {
+            display: none; /* Initially hide the additional content */
+        }
+
+        .dropdown-box.highlight {
+            border-color: red; /* Example highlighting style */
+            border-width: 2px;
+        }
+
+
+
+/* Rest of your CSS */
+
+
+    </style>
+</head>
+<body>
+
+<div id="grid-container">
+    <!-- Row 1 -->
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+
+        <div class="first-line">First line of Box 1</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 1. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 2</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 2. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 3</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 3. Click again to collapse.
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 4</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 4. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 5</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 5. Click again to collapse.
+        </div>
+    </div>
+    <div class="dropdown-box">
+        <div class="first-line">First line of Box 6</div>
+        <div class="link-icon" onclick="copyUUIDToClipboard('box-uuid')">🔗</div>
+        <div class="more-content">
+            Second line for spacing. <br>
+            More content of Box 6. Click again to collapse.
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.dropdown-box a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link behavior
+
+                // Remove existing highlights
+                document.querySelectorAll('.dropdown-box.highlight').forEach(highlightedBox => {
+                    highlightedBox.classList.remove('highlight');
+                });
+
+                const targetId = link.getAttribute('href').substring(1); // Get the UUID from the href
+                const targetBox = document.getElementById(targetId);
+
+                if (targetBox) {
+                    targetBox.classList.add('highlight'); // Add highlight class to the target box
+                    targetBox.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll to the box
+                }
+            });
+        });
+    });
+
+
+
+    document.querySelectorAll('.dropdown-box').forEach((box, index) => {
+
+        // Assign a UUID to each box
+        const uuid = generateUUID();
+        box.id = uuid; // Set the UUID as the box's ID
+
+        // Find the link icon in this box and set its onclick function
+        const linkIcon = box.querySelector('.link-icon');
+        linkIcon.onclick = () => copyUUIDToClipboard(uuid);
+
+        // Click event for dropdown
+        box.addEventListener('click', () => {
+            const content = box.querySelector('.more-content');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                box.style.maxHeight = '50px';
+            } else {
+                content.style.display = 'block';
+                box.style.maxHeight = '250px';
+            }
+        });
+
+        // Context menu (right-click) event for making box editable
+        box.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Prevent the default context menu
+            box.setAttribute('contenteditable', 'true'); // Make the box editable
+            box.focus(); // Focus on the box for immediate editing
+        });
+
+        // // Optional: Event to disable editing when clicking outside the box
+        // document.addEventListener('click', (event) => {
+        //     if (!box.contains(event.target)) {
+        //         box.removeAttribute('contenteditable');
+        //     }
+        // });
+    });
+
+    // Moved outside the forEach loop
+    document.addEventListener('click', (event) => {
+        document.querySelectorAll('.dropdown-box').forEach(box => {
+            if (!box.contains(event.target)) {
+                if (box.getAttribute('contenteditable')) {
+                    box.removeAttribute('contenteditable');
+                    convertMarkdownLinks(box);
+                }
+            }
+        });
+    });
+
+    function convertMarkdownLinks(box) {
+        let htmlContent = box.innerHTML;
+        const markdownLinkPattern = /\[([^\]]+)\]\(#([^)]+)\)/g;
+        htmlContent = htmlContent.replace(markdownLinkPattern, (match, text, uuid) => {
+            return `<a href="#${uuid}">${text}</a>`;
+        });
+        box.innerHTML = htmlContent;
+
+        // Reattach event listeners to new links
+        box.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Same click event logic as above
+            });
+        });
+    }
+
+
+    function generateUUID() {
+        // Simple UUID generator (you can replace this with a more robust solution)
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    function copyUUIDToClipboard(uuid) {
+        // Copy UUID to clipboard
+        navigator.clipboard.writeText('#' + uuid).then(() => {
+            // alert("UUID copied to clipboard!");
+            return;
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
